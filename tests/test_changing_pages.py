@@ -1,14 +1,13 @@
 from selenium import webdriver
 import locators
 import time
+from data_for_tests import TestAccount
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
 
 class TestChangingPages:
-    user_email = f"test123@test.test"
-    user_password = f"test123456"
 
     def test_go_to_personal_account(self):
         """
@@ -23,8 +22,8 @@ class TestChangingPages:
         driver.find_element(By.XPATH, locators.PERSONAL_ACCOUNT).click()
         WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(
             (By.XPATH, locators.AUTHORIZATION_INPUT_EMAIL)))
-        driver.find_element(By.XPATH, locators.AUTHORIZATION_INPUT_EMAIL).send_keys(TestChangingPages.user_email)
-        driver.find_element(By.XPATH, locators.AUTHORIZATION_INPUT_PASSWORD).send_keys(TestChangingPages.user_password)
+        driver.find_element(By.XPATH, locators.AUTHORIZATION_INPUT_EMAIL).send_keys(TestAccount.user_email)
+        driver.find_element(By.XPATH, locators.AUTHORIZATION_INPUT_PASSWORD).send_keys(TestAccount.user_password)
         driver.find_element(By.XPATH, locators.AUTHORIZATION_BUTTON_LOGIN).click()
         time.sleep(1)
         driver.find_element(By.XPATH, locators.PERSONAL_ACCOUNT).click()
@@ -47,8 +46,8 @@ class TestChangingPages:
         driver.find_element(By.XPATH, locators.PERSONAL_ACCOUNT).click()
         WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(
             (By.XPATH, locators.AUTHORIZATION_INPUT_EMAIL)))
-        driver.find_element(By.XPATH, locators.AUTHORIZATION_INPUT_EMAIL).send_keys(TestChangingPages.user_email)
-        driver.find_element(By.XPATH, locators.AUTHORIZATION_INPUT_PASSWORD).send_keys(TestChangingPages.user_password)
+        driver.find_element(By.XPATH, locators.AUTHORIZATION_INPUT_EMAIL).send_keys(TestAccount.user_email)
+        driver.find_element(By.XPATH, locators.AUTHORIZATION_INPUT_PASSWORD).send_keys(TestAccount.user_password)
         driver.find_element(By.XPATH, locators.AUTHORIZATION_BUTTON_LOGIN).click()
         time.sleep(1)
         driver.find_element(By.XPATH, locators.PERSONAL_ACCOUNT).click()
@@ -73,8 +72,8 @@ class TestChangingPages:
         driver.find_element(By.XPATH, locators.PERSONAL_ACCOUNT).click()
         WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(
             (By.XPATH, locators.AUTHORIZATION_INPUT_EMAIL)))
-        driver.find_element(By.XPATH, locators.AUTHORIZATION_INPUT_EMAIL).send_keys(TestChangingPages.user_email)
-        driver.find_element(By.XPATH, locators.AUTHORIZATION_INPUT_PASSWORD).send_keys(TestChangingPages.user_password)
+        driver.find_element(By.XPATH, locators.AUTHORIZATION_INPUT_EMAIL).send_keys(TestAccount.user_email)
+        driver.find_element(By.XPATH, locators.AUTHORIZATION_INPUT_PASSWORD).send_keys(TestAccount.user_password)
         driver.find_element(By.XPATH, locators.AUTHORIZATION_BUTTON_LOGIN).click()
         time.sleep(1)
         driver.find_element(By.XPATH, locators.PERSONAL_ACCOUNT).click()
