@@ -2,8 +2,8 @@ import random
 
 
 class TestAccount:
-    user_email = f"test123@test.test"
-    user_password = f"test123456"
+    user_email = "test123@test.test"
+    user_password = "test123456"
 
 
 class TestRandomAccount:
