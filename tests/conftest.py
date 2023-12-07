@@ -2,7 +2,7 @@ import pytest
 from selenium import webdriver
 
 
-@pytest.fixtur
+@pytest.fixture
 def get_driver(request):
     """
     Инициализация вебрайвера в Chromebrowser
