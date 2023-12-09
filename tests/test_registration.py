@@ -41,7 +41,8 @@ class TestRegistration:
             (By.XPATH, locators.BUTTON_DO_REGISTRATION)))
         self.driver.find_element(By.XPATH, locators.REGISTRATION_INPUT_NAME).send_keys(TestRandomAccount.user_name)
         self.driver.find_element(By.XPATH, locators.REGISTRATION_INPUT_EMAIL).send_keys(TestRandomAccount.user_email)
-        self.driver.find_element(By.XPATH, locators.REGISTRATION_INPUT_PASSWORD).send_keys(TestRandomAccount.bad_password)
+        self.driver.find_element(By.XPATH, locators.REGISTRATION_INPUT_PASSWORD).send_keys(
+            TestRandomAccount.bad_password)
         self.driver.find_element(By.XPATH, locators.BUTTON_DO_REGISTRATION).click()
         WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(
             (By.XPATH, locators.ERROR_PASSWORD)))

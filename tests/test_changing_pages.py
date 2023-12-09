@@ -72,7 +72,7 @@ class TestChangingPages:
         self.driver.find_element(By.XPATH, locators.PERSONAL_ACCOUNT).click()
         WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(
             (By.XPATH, locators.INFORMATION_IN_PERSONAL_ACCOUNT)))
-        self.driver.find_element(By.XPATH, locators.LOGO).click()
+        self.driver.find_element(By.CLASS_NAME, locators.LOGO).click()
         WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(
             (By.XPATH, locators.CONSTRUCTOR_HEADER)))
         assert self.driver.find_element(By.XPATH, locators.CONSTRUCTOR_HEADER).text == 'Соберите бургер'

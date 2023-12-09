@@ -58,8 +58,8 @@ class TestAuthorizations:
             """
             self.driver.get("https://stellarburgers.nomoreparties.site/register")
             WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(
-                (By.XPATH, locators.BUTTON_LOGIN_ON_REGISTRATION_PAGE)))
-            self.driver.find_element(By.XPATH, locators.BUTTON_LOGIN_ON_REGISTRATION_PAGE).click()
+                (By.XPATH, locators.BUTTON_LOGIN_ON_REGISTRATION_AND_PASS_RECOVERY_PAGE)))
+            self.driver.find_element(By.XPATH, locators.BUTTON_LOGIN_ON_REGISTRATION_AND_PASS_RECOVERY_PAGE).click()
             WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(
                 (By.XPATH, locators.AUTHORIZATION_INPUT_EMAIL)))
             self.driver.find_element(By.XPATH, locators.AUTHORIZATION_INPUT_EMAIL).send_keys(TestAccount.user_email)
@@ -79,8 +79,8 @@ class TestAuthorizations:
             """
             self.driver.get("https://stellarburgers.nomoreparties.site/forgot-password")
             WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(
-                (By.XPATH, locators.BUTTON_LOGIN_ON_PASS_RECOVERY_PAGE)))
-            self.driver.find_element(By.XPATH, locators.BUTTON_LOGIN_ON_PASS_RECOVERY_PAGE).click()
+                (By.XPATH, locators.BUTTON_LOGIN_ON_REGISTRATION_AND_PASS_RECOVERY_PAGE)))
+            self.driver.find_element(By.XPATH, locators.BUTTON_LOGIN_ON_REGISTRATION_AND_PASS_RECOVERY_PAGE).click()
             WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(
                 (By.XPATH, locators.AUTHORIZATION_INPUT_EMAIL)))
             self.driver.find_element(By.XPATH, locators.AUTHORIZATION_INPUT_EMAIL).send_keys(TestAccount.user_email)
