@@ -15,9 +15,10 @@ INFORMATION_IN_PERSONAL_ACCOUNT = "//p[@class='Account_text__fZAIn text text_typ
 BUTTON_CONSTRUCTOR = "//header//p[text()='Конструктор']"  # Кнопка "Конструктор" в шапке сайта
 CONSTRUCTOR_HEADER = "//h1[text()='Соберите бургер']"  # Заголовок на странице конструктора
 LOGO = "AppHeader_header__logo__2D0X2"  # Логотип в шапке сайта
-BUTTON_BREAD_ROLLS = "//span[text()='Булки']"  # Кнопка раздела "Булки" на странице конструктора
-BUTTON_SAUCES = "//span[text()='Соусы']"  # Кнопка радела "Соусы" на странице конструктора
-BUTTON_FILLINGS = "//span[text()='Начинки']"  # Кнопка раздела "Начинки" на странице конструктора
+BUTTON_BREAD_ROLLS = "//span[text()='Булки']/parent::div"  # Кнопка раздела "Булки" на странице конструктора
+BUTTON_SAUCES = "//span[text()='Соусы']/parent::div"  # Кнопка радела "Соусы" на странице конструктора
+BUTTON_FILLINGS = "//span[text()='Начинки']/parent::div"  # Кнопка раздела "Начинки" на странице конструктора
 TITLE_BREAD_ROLLS = "//h2[text()='Булки']"  # Название раздела "Булки"
 TITLE_SAUCES = "//h2[text()='Соусы']"  # Название раздела "Соусы"
 TITLE_FILLINGS = "//h2[text()='Начинки']"  # Название раздела "Начинки"
+PLACE_AN_ORDER = "//button[text()='Оформить заказ']"  # Кнопка "Оформить заказ"

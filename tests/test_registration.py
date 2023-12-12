@@ -15,15 +15,12 @@ class TestRegistration:
         :return:
         """
         self.driver.get("https://stellarburgers.nomoreparties.site/")
+        WebDriverWait(self.driver, 3).until(expected_conditions.element_to_be_clickable(
+            (By.XPATH, locators.PERSONAL_ACCOUNT))).click()
+        WebDriverWait(self.driver, 3).until(expected_conditions.element_to_be_clickable(
+            (By.XPATH, locators.BUTTON_START_REGISTRATION))).click()
         WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(
-            (By.XPATH, locators.PERSONAL_ACCOUNT)))
-        self.driver.find_element(By.XPATH, locators.PERSONAL_ACCOUNT).click()
-        WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(
-            (By.XPATH, locators.BUTTON_START_REGISTRATION)))
-        self.driver.find_element(By.XPATH, locators.BUTTON_START_REGISTRATION).click()
-        WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(
-            (By.XPATH, locators.BUTTON_DO_REGISTRATION)))
-        self.driver.find_element(By.XPATH, locators.REGISTRATION_INPUT_NAME).send_keys(TestRandomAccount.user_name)
+            (By.XPATH, locators.REGISTRATION_INPUT_NAME))).send_keys(TestRandomAccount.user_name)
         self.driver.find_element(By.XPATH, locators.REGISTRATION_INPUT_EMAIL).send_keys(TestRandomAccount.user_email)
         self.driver.find_element(By.XPATH, locators.REGISTRATION_INPUT_PASSWORD).send_keys(TestRandomAccount.password)
         self.driver.find_element(By.XPATH, locators.BUTTON_DO_REGISTRATION).click()
@@ -38,8 +35,7 @@ class TestRegistration:
         """
         self.driver.get("https://stellarburgers.nomoreparties.site/register")
         WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(
-            (By.XPATH, locators.BUTTON_DO_REGISTRATION)))
-        self.driver.find_element(By.XPATH, locators.REGISTRATION_INPUT_NAME).send_keys(TestRandomAccount.user_name)
+            (By.XPATH, locators.REGISTRATION_INPUT_NAME))).send_keys(TestRandomAccount.user_name)
         self.driver.find_element(By.XPATH, locators.REGISTRATION_INPUT_EMAIL).send_keys(TestRandomAccount.user_email)
         self.driver.find_element(By.XPATH, locators.REGISTRATION_INPUT_PASSWORD).send_keys(
             TestRandomAccount.bad_password)
